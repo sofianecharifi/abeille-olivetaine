@@ -1,24 +1,303 @@
-/* ── Variables ── */
-:root {
-  --jaune: #f0b429;
-  --jaune-clair: #fde68a;
-  --brun-fonce: #1a1100;
-  --brun-moyen: #3b2500;
-  --fond-page: #1c1408;
-  --fond-contenu: #fdf3dc;
-  --texte-sombre: #1a1100;
-  --texte-clair: #ffffff;
-  --radius: 10px;
-  --ombre: 0 4px 20px rgba(0, 0, 0, 0.4);
-}
-
-/* ── Reset ── */
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
+* {
+  scroll-behavior: smooth;
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --primary-orange: #ffeba9;
+  --secondary-yellow: #ffc300;
+  --primary-blue: #001d3d;
+  --white: #ffffff;
+  --black: #000000;
+}
+
+body {
+  font-family: "Montserrat", sans-serif;
+  background-color: var(--white);
+  color: var(--black);
+  line-height: 1.6;
+  min-height: 100vh;
+  position: relative;
+  margin-top: 5rem;
+}
+
+header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+}
+
+.container-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 1rem 3rem;
+  background-color: rgba(255, 235, 169, 0.6);
+  backdrop-filter: blur(8px);
+}
+
+.logo img {
+  height: 40px;
+  width: auto;
+}
+
+.burger-menu {
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+  z-index: 1001;
+  order: 2;
+}
+
+.bar {
+  width: 25px;
+  height: 3px;
+  background-color: var(--black);
+  margin: 3px 0;
+  transition: 0.3s;
+}
+
+.contact-icon {
+  color: var(--white);
+  font-size: 1.2rem;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.nav-links {
+  position: fixed;
+  top: 0;
+  right: -100%;
+  width: 70%;
+  height: 100vh;
+  background-color: var(--primary-blue);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  padding-top: 5.5rem;
+  gap: 1.25rem;
+  transition: right 0.3s ease;
+  z-index: 1000;
+  order: 3;
+}
+
+.nav-links a {
+  color: var(--black);
+  text-decoration: none;
+  font-size: 1.1rem;
+  font-weight: 500;
+  margin: 1rem 0;
+  transition: color 0.3s;
+}
+
+#menu-toggle:checked ~ .nav-links {
+  right: 0;
+}
+
+#menu-toggle:checked ~ .burger-menu .bar:nth-child(1) {
+  transform: rotate(-45deg) translate(-5px, 6px);
+}
+
+#menu-toggle:checked ~ .burger-menu .bar:nth-child(2) {
+  opacity: 0;
+}
+
+#menu-toggle:checked ~ .burger-menu .bar:nth-child(3) {
+  transform: rotate(45deg) translate(-5px, -6px);
+}
+
+main {
+  padding-top: 120px;
+  min-height: calc(100vh - 160px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.form-part {
+  background-color: rgba(255, 255, 255, 0.9);
+  border-radius: 15px;
+  padding: 2rem;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  max-width: 420px;
+  width: min(90%, 420px);
+  margin: 2rem auto;
+}
+
+.form-part h2 {
+  color: var(--primary-blue);
+  text-align: center;
+  margin-bottom: 2rem;
+  font-family: "Playfair Display", serif;
+  font-size: 1.5rem;
+}
+
+form ul {
+  list-style: none;
+}
+
+form li {
+  margin-bottom: 1.5rem;
+}
+
+form label {
+  display: block;
+  margin-bottom: 0.5rem;
+  color: var(--primary-blue);
+  font-weight: 700;
+}
+
+form input,
+form textarea {
+  width: 100%;
+  padding: 0.75rem;
+  border: 2px solid #ddd;
+  border-radius: 8px;
+  font-size: 1rem;
+  transition:
+    border-color 0.3s,
+    box-shadow 0.3s;
+  background-color: var(--white);
+}
+
+form input:focus,
+form textarea:focus {
+  outline: none;
+  border-color: var(--secondary-yellow);
+  box-shadow: 0 0 0 3px rgba(255, 195, 0, 0.1);
+}
+
+form textarea {
+  resize: vertical;
+  min-height: 100px;
+}
+
+.submit-btn {
+  width: 100%;
+  padding: 0.75rem;
+  background-color: var(--primary-orange);
+  color: var(--primary-blue);
+  border: none;
+  border-radius: 8px;
+  font-size: 1.1rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition:
+    background-color 0.3s,
+    transform 0.2s;
+}
+
+footer {
+  background-color: var(--primary-blue);
+  padding: 1rem;
+  text-align: center;
+}
+
+.footer-social a {
+  color: var(--white);
+  margin: 0 0.5rem;
+  text-decoration: none;
+  font-size: 0.9rem;
+}
+
+@media (min-width: 768px) {
+  .container-nav {
+    padding: 1rem 2rem;
+  }
+
+  .nav-links {
+    position: static;
+    width: auto;
+    height: auto;
+    background-color: transparent;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+    order: 1;
+    padding-top: 0.5rem;
+  }
+
+  .contact-icon {
+    order: 2;
+    margin-left: 1.5rem;
+  }
+
+  .nav-links a {
+    margin: 0 1rem;
+  }
+
+  .burger-menu {
+    display: none;
+  }
+
+  main {
+    align-items: flex-start;
+  }
+
+  .form-part {
+    max-width: 500px;
+    padding: 3rem;
+  }
+
+  .form-part h2 {
+    font-size: 2rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .container-nav {
+    padding: 1rem 3rem;
+  }
+
+  .nav-links a {
+    margin: 0 1.5rem;
+  }
+
+  .form-part {
+    max-width: 600px;
+  }
+}
+
+/*<--------BIENVENUE-------->*/
+
+.bienvenue {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.bienvenue img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1;
+}
+
+.bienvenue h1 {
+  color: var(--primary-orange);
+  font-size: 5rem;
+  z-index: 1;
+  text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.6);
+  font-family: "Chewy", system-ui;
+  text-align: center;
+  letter-spacing: 1px;
+}
+
+main {
+  padding-top: 0 !important;
+  display: block !important;
 }
 
 .tableau-grid {
@@ -44,134 +323,138 @@
   font-weight: bold;
 }
 
-/* ── Body & fond ── */
-body {
-  font-family: "Montserrat", sans-serif;
-  background-color: var(--fond-page);
-  color: var(--texte-sombre);
-  min-height: 100vh;
-}
-
-.bg {
-  position: fixed;
-  inset: 0;
-  background: radial-gradient(ellipse at top, #2e1a00 0%, #1c1408 60%);
-  z-index: -1;
-}
-
-/* ── Header / Nav ── */
-header {
-  background-color: var(--brun-fonce);
-  border-bottom: 3px solid var(--jaune);
-  position: sticky;
-  top: 0;
-  z-index: 100;
-  box-shadow: var(--ombre);
-}
-
-.container-nav {
+/*<--------ASSOCIATION-------->*/
+.association-section {
   display: flex;
+  align-items: stretch;
+  justify-content: center;
+  max-width: 1000px;
+  margin: 4rem auto;
+  background-color: #ffffff;
+  color: #000000;
+}
+
+.association-content {
+  flex: 1;
+  padding: 3rem 4rem;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   align-items: center;
-  justify-content: space-between;
-  max-width: 960px;
-  margin: 0 auto;
-  padding: 0.6rem 1.2rem;
-}
-
-#logo1 {
-  height: 48px;
-  width: auto;
-}
-
-.nav-links {
-  display: flex;
   gap: 1.5rem;
 }
 
-.nav-links a {
-  color: var(--texte-clair);
-  text-decoration: none;
-  font-size: 0.85rem;
+.association-content h2 {
+  font-family: "Montserrat", sans-serif;
+  font-size: 2.2rem;
   font-weight: 700;
-  letter-spacing: 0.03em;
+  margin-bottom: 0.5rem;
+  line-height: 1.3;
+}
+
+.association-content p {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #333;
+}
+
+.btn-adhesion {
+  display: inline-block;
+  margin-top: 1.5rem;
+  padding: 0.8rem 4rem;
+  border: 4px solid #001d3d;
+  background-color: #ffffff;
+  color: #000000;
+  font-weight: 700;
+  text-decoration: none;
+  font-size: 1.1rem;
+  transition: all 0.3s ease;
   text-transform: uppercase;
-  transition: color 0.2s;
 }
 
-.nav-links a:hover {
-  color: var(--jaune);
+.btn-adhesion:hover {
+  background-color: #001d3d;
+  color: #ffffff;
 }
 
-/* Burger (mobile) */
-.burger-menu {
-  display: none;
-  flex-direction: column;
-  gap: 5px;
-  cursor: pointer;
+.association-image {
+  flex: 1;
+  display: flex;
 }
 
-.bar {
-  display: block;
-  width: 26px;
-  height: 3px;
-  background-color: var(--jaune);
-  border-radius: 2px;
-  transition: transform 0.3s;
+.association-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  min-height: 400px;
 }
 
-/* ── Main ── */
-main {
-  max-width: 760px;
-  margin: 2.5rem auto 4rem;
-  padding: 0 1.2rem;
+@media (max-width: 768px) {
+  .association-section {
+    flex-direction: column;
+    margin: 2rem;
+  }
+
+  .association-content {
+    padding: 2rem;
+  }
+}
+
+/*<--------QUI SOMMES-NOUS-------->*/
+
+.qui-sommes-nous {
+  padding-top: 100px;
+  padding-bottom: 4rem;
+  max-width: 860px;
+  margin: 0 auto;
   display: flex;
   flex-direction: column;
-  gap: 1.6rem;
+  gap: 1.5rem;
 }
 
-/* ── Sections texte ── */
-section {
-  background-color: var(--fond-contenu);
-  border-radius: var(--radius);
-  padding: 1.4rem 1.6rem;
-  box-shadow: var(--ombre);
+.qui-sommes-nous section {
+  background-color: var(--white);
+  border-left: 5px solid var(--secondary-yellow);
+  padding: 1.8rem 2rem;
+  box-shadow: 0 4px 16px rgba(0, 29, 61, 0.08);
 }
 
-section p {
+.qui-sommes-nous section p {
   font-weight: 700;
-  margin-bottom: 0.6rem;
-  color: var(--texte-sombre);
+  font-size: 1rem;
+  color: var(--primary-blue);
+  margin-bottom: 0.8rem;
 }
 
-section ul {
+.qui-sommes-nous section ul {
   padding-left: 1.4rem;
   display: flex;
   flex-direction: column;
-  gap: 0.4rem;
+  gap: 0.45rem;
 }
 
-section ul li {
-  font-size: 0.92rem;
-  line-height: 1.55;
-  color: var(--texte-sombre);
+.qui-sommes-nous section ul li {
+  font-size: 0.93rem;
+  line-height: 1.6;
+  color: #222;
 }
 
-section ul li::marker {
-  color: var(--jaune);
+.qui-sommes-nous section ul li::marker {
+  color: var(--secondary-yellow);
 }
 
-/* Sous-liste */
-section ul ul {
-  margin-top: 0.4rem;
+.qui-sommes-nous section ul ul {
+  margin-top: 0.5rem;
   padding-left: 1.2rem;
   list-style-type: circle;
 }
 
-section ul ul li::marker {
-  color: var(--brun-moyen);
+.qui-sommes-nous section ul ul li::marker {
+  color: var(--primary-blue);
 }
 
-/* ── Carte contact ── */
+/* Carte contact */
 .carte-contact {
   display: flex;
   gap: 1rem;
@@ -180,25 +463,25 @@ section ul ul li::marker {
 
 .carte-adresse {
   flex: 1;
-  background-color: var(--fond-contenu);
-  border-radius: var(--radius);
-  padding: 1.2rem 1.4rem;
-  box-shadow: var(--ombre);
+  background-color: var(--primary-orange);
+  padding: 1.4rem 1.8rem;
   display: flex;
   flex-direction: column;
   gap: 0.3rem;
+  box-shadow: 0 4px 16px rgba(0, 29, 61, 0.1);
 }
 
 .carte-adresse p {
-  font-size: 0.9rem;
-  color: var(--texte-sombre);
+  font-size: 0.92rem;
+  color: var(--primary-blue);
 }
 
 .carte-adresse h3 {
   font-family: "Playfair Display", serif;
-  font-size: 1.2rem;
-  color: var(--brun-moyen);
-  margin-bottom: 0.2rem;
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--primary-blue);
+  margin: 0.2rem 0;
 }
 
 .carte-adresse strong {
@@ -217,64 +500,36 @@ section ul ul li::marker {
   align-items: center;
   justify-content: center;
   text-align: center;
-  background-color: var(--jaune);
-  color: var(--brun-fonce);
+  padding: 1.2rem 1.8rem;
+  background-color: var(--primary-blue);
+  color: var(--white);
   font-family: "Montserrat", sans-serif;
   font-weight: 700;
-  font-size: 0.9rem;
+  font-size: 0.95rem;
   text-decoration: none;
-  padding: 1rem 1.4rem;
-  border-radius: var(--radius);
-  box-shadow: var(--ombre);
-  line-height: 1.4;
+  line-height: 1.5;
   transition:
-    background-color 0.2s,
-    transform 0.15s;
+    background-color 0.3s,
+    transform 0.2s;
   white-space: nowrap;
 }
 
 .btn-contact:hover {
-  background-color: var(--jaune-clair);
+  background-color: #003070;
   transform: translateY(-2px);
 }
 
-/* ── Map ── */
+/* Map */
 #map {
   width: 100%;
-  height: 300px;
-  border-radius: var(--radius);
-  overflow: hidden;
-  box-shadow: var(--ombre);
+  height: 320px;
+  box-shadow: 0 4px 16px rgba(0, 29, 61, 0.12);
 }
 
-/* ── Footer ── */
-footer {
-  background-color: var(--brun-fonce);
-  border-top: 3px solid var(--jaune);
-  min-height: 60px;
-}
-
-/* ── Responsive ── */
+/* Responsive */
 @media (max-width: 600px) {
-  .nav-links {
-    display: none;
-    flex-direction: column;
-    position: absolute;
-    top: 64px;
-    left: 0;
-    right: 0;
-    background-color: var(--brun-fonce);
-    padding: 1rem 1.5rem;
-    gap: 1rem;
-    border-bottom: 2px solid var(--jaune);
-  }
-
-  #menu-toggle:checked ~ .nav-links {
-    display: flex;
-  }
-
-  .burger-menu {
-    display: flex;
+  .qui-sommes-nous {
+    padding: 90px 1rem 2rem;
   }
 
   .carte-contact {
@@ -283,5 +538,6 @@ footer {
 
   .btn-contact {
     width: 100%;
+    padding: 1rem;
   }
 }

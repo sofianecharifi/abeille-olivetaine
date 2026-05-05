@@ -1,0 +1,287 @@
+/* ── Variables ── */
+:root {
+  --jaune: #f0b429;
+  --jaune-clair: #fde68a;
+  --brun-fonce: #1a1100;
+  --brun-moyen: #3b2500;
+  --fond-page: #1c1408;
+  --fond-contenu: #fdf3dc;
+  --texte-sombre: #1a1100;
+  --texte-clair: #ffffff;
+  --radius: 10px;
+  --ombre: 0 4px 20px rgba(0, 0, 0, 0.4);
+}
+
+/* ── Reset ── */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.tableau-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  max-width: 500px;
+  margin: 20px auto;
+  border: 2px solid black;
+  background-color: black;
+  gap: 2px;
+}
+.tableau-grid div {
+  background-color: white;
+  padding: 15px;
+  text-align: center;
+  font-family: sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.header {
+  font-weight: bold;
+}
+
+/* ── Body & fond ── */
+body {
+  font-family: "Montserrat", sans-serif;
+  background-color: var(--fond-page);
+  color: var(--texte-sombre);
+  min-height: 100vh;
+}
+
+.bg {
+  position: fixed;
+  inset: 0;
+  background: radial-gradient(ellipse at top, #2e1a00 0%, #1c1408 60%);
+  z-index: -1;
+}
+
+/* ── Header / Nav ── */
+header {
+  background-color: var(--brun-fonce);
+  border-bottom: 3px solid var(--jaune);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: var(--ombre);
+}
+
+.container-nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 0.6rem 1.2rem;
+}
+
+#logo1 {
+  height: 48px;
+  width: auto;
+}
+
+.nav-links {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.nav-links a {
+  color: var(--texte-clair);
+  text-decoration: none;
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  transition: color 0.2s;
+}
+
+.nav-links a:hover {
+  color: var(--jaune);
+}
+
+/* Burger (mobile) */
+.burger-menu {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+}
+
+.bar {
+  display: block;
+  width: 26px;
+  height: 3px;
+  background-color: var(--jaune);
+  border-radius: 2px;
+  transition: transform 0.3s;
+}
+
+/* ── Main ── */
+main {
+  max-width: 760px;
+  margin: 2.5rem auto 4rem;
+  padding: 0 1.2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.6rem;
+}
+
+/* ── Sections texte ── */
+section {
+  background-color: var(--fond-contenu);
+  border-radius: var(--radius);
+  padding: 1.4rem 1.6rem;
+  box-shadow: var(--ombre);
+}
+
+section p {
+  font-weight: 700;
+  margin-bottom: 0.6rem;
+  color: var(--texte-sombre);
+}
+
+section ul {
+  padding-left: 1.4rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+section ul li {
+  font-size: 0.92rem;
+  line-height: 1.55;
+  color: var(--texte-sombre);
+}
+
+section ul li::marker {
+  color: var(--jaune);
+}
+
+/* Sous-liste */
+section ul ul {
+  margin-top: 0.4rem;
+  padding-left: 1.2rem;
+  list-style-type: circle;
+}
+
+section ul ul li::marker {
+  color: var(--brun-moyen);
+}
+
+/* ── Carte contact ── */
+.carte-contact {
+  display: flex;
+  gap: 1rem;
+  align-items: stretch;
+}
+
+.carte-adresse {
+  flex: 1;
+  background-color: var(--fond-contenu);
+  border-radius: var(--radius);
+  padding: 1.2rem 1.4rem;
+  box-shadow: var(--ombre);
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+
+.carte-adresse p {
+  font-size: 0.9rem;
+  color: var(--texte-sombre);
+}
+
+.carte-adresse h3 {
+  font-family: "Playfair Display", serif;
+  font-size: 1.2rem;
+  color: var(--brun-moyen);
+  margin-bottom: 0.2rem;
+}
+
+.carte-adresse strong {
+  color: #c0392b;
+  font-weight: 700;
+}
+
+.carte-cta {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.btn-contact {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background-color: var(--jaune);
+  color: var(--brun-fonce);
+  font-family: "Montserrat", sans-serif;
+  font-weight: 700;
+  font-size: 0.9rem;
+  text-decoration: none;
+  padding: 1rem 1.4rem;
+  border-radius: var(--radius);
+  box-shadow: var(--ombre);
+  line-height: 1.4;
+  transition:
+    background-color 0.2s,
+    transform 0.15s;
+  white-space: nowrap;
+}
+
+.btn-contact:hover {
+  background-color: var(--jaune-clair);
+  transform: translateY(-2px);
+}
+
+/* ── Map ── */
+#map {
+  width: 100%;
+  height: 300px;
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: var(--ombre);
+}
+
+/* ── Footer ── */
+footer {
+  background-color: var(--brun-fonce);
+  border-top: 3px solid var(--jaune);
+  min-height: 60px;
+}
+
+/* ── Responsive ── */
+@media (max-width: 600px) {
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 64px;
+    left: 0;
+    right: 0;
+    background-color: var(--brun-fonce);
+    padding: 1rem 1.5rem;
+    gap: 1rem;
+    border-bottom: 2px solid var(--jaune);
+  }
+
+  #menu-toggle:checked ~ .nav-links {
+    display: flex;
+  }
+
+  .burger-menu {
+    display: flex;
+  }
+
+  .carte-contact {
+    flex-direction: column;
+  }
+
+  .btn-contact {
+    width: 100%;
+  }
+}

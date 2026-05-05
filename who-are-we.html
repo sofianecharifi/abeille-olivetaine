@@ -5,7 +5,7 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/png" href="IMG/logo1.webp" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" type="text/css" href="style.css" />
+    <link rel="stylesheet" type="text/css" href="who-are-we.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -15,6 +15,10 @@
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
     />
   </head>
 
@@ -45,10 +49,98 @@
       </nav>
     </header>
 
-    <main>
-      <div class="container"></div>
+    <main class="qui-sommes-nous">
+      <section>
+        <p>L'Abeille Olivetaine a pour objectifs :</p>
+        <ul>
+          <li>de s'adresser à tous,</li>
+          <li>
+            de favoriser et de promouvoir le développement et la connaissance de
+            l'abeille et de son habitat,
+          </li>
+          <li>
+            de favoriser et de promouvoir le développement de l'apiculture à
+            Olivet et environs.
+          </li>
+        </ul>
+      </section>
+
+      <section>
+        <p>Ces objectifs sont atteints :</p>
+        <ul>
+          <li>
+            par de l'information, de la communication aux jeunes en particulier,
+          </li>
+          <li>
+            par l'organisation et / ou la participation à des manifestations,
+          </li>
+          <li>
+            par de la formation théorique et pratique à l'abeille et
+            l'apiculture,
+          </li>
+          <li>
+            par de la gestion de petits &laquo;&nbsp;ruchers
+            associatifs&nbsp;&raquo; : accueil et exploitation des ruches de
+            L'Abeille Olivetaine ou de ruches des membres de l'association,
+          </li>
+          <li>
+            par du conseil et de l'assistance aux nouveaux apiculteurs en
+            particulier :
+            <ul>
+              <li>
+                par la mise à disposition des &laquo;&nbsp;gros
+                matériels&nbsp;&raquo; : extracteur, bac à désoperculer,
+                chaudière à cire, petits outillages pour réalisation de cadres,
+              </li>
+              <li>par la mise à disposition de reines et essaims,</li>
+              <li>par la récupération d'essaims en ville,</li>
+              <li>
+                par du &laquo;&nbsp;lobbying&nbsp;&raquo; auprès des
+                collectivités, sociétés, associations et organismes divers.
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </section>
+
+      <div class="carte-contact">
+        <div class="carte-adresse">
+          <p>L'association</p>
+          <h3>l'Abeille Olivetaine</h3>
+          <p>est basée</p>
+          <p>au 313 rue de Lorette à Olivet (45160)</p>
+          <p>Tél assistance : <strong>06 49 53 07 42</strong></p>
+        </div>
+        <div class="carte-cta">
+          <a href="contact.html" class="btn-contact">Contactez<br />nous</a>
+        </div>
+      </div>
+
+      <div id="map"></div>
     </main>
 
-    <footer></footer>
+    <footer>
+      <div class="footer-social">
+        <a href="#">Facebook</a>
+        <a href="#">Instagram</a>
+      </div>
+    </footer>
+
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script>
+      const map = L.map("map").setView([47.871, 1.9098], 17);
+
+      L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
+        attribution:
+          '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+      }).addTo(map);
+
+      L.marker([47.871, 1.9098])
+        .addTo(map)
+        .bindPopup(
+          "<strong>L'Abeille Olivetaine</strong><br>313 rue de Lorette<br>45160 Olivet",
+        )
+        .openPopup();
+    </script>
   </body>
 </html>

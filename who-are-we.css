@@ -20,6 +20,7 @@ body {
   line-height: 1.6;
   min-height: 100vh;
   position: relative;
+  margin-top: 5rem;
 }
 
 header {
@@ -35,7 +36,7 @@ header {
   align-items: center;
   gap: 0.75rem;
   padding: 1rem 3rem;
-  background: rgba(255, 255, 255, 0.5);
+  background-color: rgba(255, 235, 169, 0.6);
   backdrop-filter: blur(8px);
 }
 
@@ -61,13 +62,12 @@ header {
 }
 
 .contact-icon {
-  color: var(--primary-blue);
+  color: var(--white);
   font-size: 1.2rem;
   cursor: pointer;
   display: inline-flex;
   align-items: center;
   gap: 0.6rem;
-  font-weight: 600;
 }
 
 .nav-links {
@@ -76,7 +76,7 @@ header {
   right: -100%;
   width: 70%;
   height: 100vh;
-  background-color: var(--white);
+  background-color: var(--primary-blue);
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -111,10 +111,6 @@ header {
 
 #menu-toggle:checked ~ .burger-menu .bar:nth-child(3) {
   transform: rotate(45deg) translate(-5px, -6px);
-}
-
-#menu-toggle:checked ~ .burger-menu .bar {
-  background-color: var(--black);
 }
 
 main {
@@ -186,7 +182,7 @@ form textarea {
 .submit-btn {
   width: 100%;
   padding: 0.75rem;
-  background-color: var(--secondary-yellow);
+  background-color: var(--primary-orange);
   color: var(--primary-blue);
   border: none;
   border-radius: 8px;
@@ -200,40 +196,14 @@ form textarea {
 
 footer {
   background-color: var(--primary-blue);
-  color: var(--white);
-  padding: 2rem 1rem;
-  margin-top: 2rem;
+  padding: 1rem;
   text-align: center;
 }
 
-footer div {
-  margin-bottom: 1rem;
-}
-
-footer div:last-child {
-  margin-bottom: 0;
-}
-
-footer div:first-child {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 1rem;
-  margin-bottom: 1.5rem;
-}
-
-footer a {
+.footer-social a {
   color: var(--white);
+  margin: 0 0.5rem;
   text-decoration: none;
-  font-weight: 600;
-}
-
-footer a:hover {
-  color: #ffeba9;
-}
-
-footer div:last-child a {
-  font-weight: 400;
   font-size: 0.9rem;
 }
 
@@ -261,8 +231,6 @@ footer div:last-child a {
 
   .nav-links a {
     margin: 0 1rem;
-    color: var(--primary-blue);
-    font-weight: 600;
   }
 
   .burger-menu {
@@ -337,11 +305,9 @@ main {
   grid-template-columns: 1fr 1fr;
   max-width: 500px;
   margin: 20px auto;
-  border: 2px solid #ddd;
-  background-color: #ddd;
+  border: 2px solid black;
+  background-color: black;
   gap: 2px;
-  border-radius: 8px;
-  overflow: hidden;
 }
 .tableau-grid div {
   background-color: white;
@@ -355,71 +321,6 @@ main {
 
 .header {
   font-weight: bold;
-  background-color: #f8f9fa !important;
-}
-
-.color-blanc {
-  background-color: #ffffff !important;
-  color: #000;
-  border: 1px solid #ccc;
-}
-.color-jaune {
-  background-color: #fce83a !important;
-  color: #000;
-}
-.color-rouge {
-  background-color: #b91c1c !important;
-  color: #fff;
-}
-.color-vert {
-  background-color: #0d6b5e !important;
-  color: #fff;
-}
-.color-bleu {
-  background-color: #0077b6 !important;
-  color: #fff;
-}
-
-/*<--------REINES-------->*/
-.reines-section {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  max-width: 1000px;
-  margin: 4rem auto;
-  background-color: #ffffff;
-  color: #000000;
-  gap: 3rem;
-  padding: 0 2rem;
-}
-
-.reines-content {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  text-align: justify;
-}
-
-.reines-image {
-  flex: 1;
-  display: flex;
-}
-
-.reines-image img {
-  width: 100%;
-  height: auto;
-  object-fit: cover;
-  border-radius: 15px;
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-}
-
-@media (max-width: 768px) {
-  .reines-section {
-    flex-direction: column;
-    margin: 2rem;
-    gap: 1.5rem;
-  }
 }
 
 /*<--------ASSOCIATION-------->*/
@@ -455,7 +356,7 @@ main {
 .association-content p {
   font-size: 1rem;
   line-height: 1.6;
-  color: #1a1a1a;
+  color: #333;
 }
 
 .btn-adhesion {
@@ -500,115 +401,143 @@ main {
   }
 }
 
-/*<--------CARDS SECTION-------->*/
-.cards-container {
-  display: flex;
-  justify-content: center;
-  gap: 2rem;
-  max-width: 1000px;
-  margin: 3rem auto;
-  flex-wrap: wrap;
-}
+/*<--------QUI SOMMES-NOUS-------->*/
 
-.card {
-  background: #ffffff;
-  border-radius: 12px;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
-  padding: 3rem 2rem;
-  flex: 1;
-  min-width: 300px;
-  max-width: 450px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-  justify-content: space-between;
-}
-
-.card p {
-  font-size: 1rem;
-  margin-bottom: 2rem;
-  color: #1a1a1a;
-}
-
-.btn-card {
-  font-weight: 700;
-  text-decoration: underline;
-  text-underline-offset: 4px;
-  padding: 0.8rem 2rem;
-  width: 80%;
-  transition: all 0.3s ease;
-  font-size: 1.1rem;
-  display: inline-block;
-}
-
-.btn-outline {
-  border: 4px solid #001d3d;
-  background-color: #ffffff;
-  color: #000000;
-}
-
-.btn-outline:hover {
-  background-color: #f8f9fa;
-}
-
-.btn-filled {
-  border: 4px solid #001d3d;
-  background-color: #001d3d;
-  color: #ffffff;
-  box-shadow: inset 0 0 0 3px #ffffff;
-}
-
-.btn-filled:hover {
-  background-color: #002d5e;
-}
-
-/*<--------CARD DON-------->*/
-.card-don {
-  display: flex;
-  align-items: center;
-  background-color: #ffffff;
-  border: 8px solid #d3d3d3;
-  border-radius: 12px;
-  max-width: 800px;
-  margin: 3rem auto;
-  padding: 2rem 3rem;
-  gap: 3rem;
-}
-
-.card-don .icon-container {
-  font-size: 4rem;
-  color: #001d3d;
-}
-
-.card-don .content {
+.qui-sommes-nous {
+  padding-top: 100px;
+  padding-bottom: 4rem;
+  max-width: 860px;
+  margin: 0 auto;
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
-  text-align: left;
 }
 
-.card-don .description {
-  font-size: 1.1rem;
-  color: #1a1a1a;
+.qui-sommes-nous section {
+  background-color: var(--white);
+  border-left: 5px solid var(--secondary-yellow);
+  padding: 1.8rem 2rem;
+  box-shadow: 0 4px 16px rgba(0, 29, 61, 0.08);
 }
 
-.card-don .price {
-  font-size: 1.2rem;
-  font-weight: bold;
+.qui-sommes-nous section p {
+  font-weight: 700;
+  font-size: 1rem;
+  color: var(--primary-blue);
+  margin-bottom: 0.8rem;
 }
 
-@media (max-width: 768px) {
-  .cards-container {
-    padding: 0 1rem;
+.qui-sommes-nous section ul {
+  padding-left: 1.4rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+}
+
+.qui-sommes-nous section ul li {
+  font-size: 0.93rem;
+  line-height: 1.6;
+  color: #222;
+}
+
+.qui-sommes-nous section ul li::marker {
+  color: var(--secondary-yellow);
+}
+
+.qui-sommes-nous section ul ul {
+  margin-top: 0.5rem;
+  padding-left: 1.2rem;
+  list-style-type: circle;
+}
+
+.qui-sommes-nous section ul ul li::marker {
+  color: var(--primary-blue);
+}
+
+/* Carte contact */
+.carte-contact {
+  display: flex;
+  gap: 1rem;
+  align-items: stretch;
+}
+
+.carte-adresse {
+  flex: 1;
+  background-color: var(--primary-orange);
+  padding: 1.4rem 1.8rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  box-shadow: 0 4px 16px rgba(0, 29, 61, 0.1);
+}
+
+.carte-adresse p {
+  font-size: 0.92rem;
+  color: var(--primary-blue);
+}
+
+.carte-adresse h3 {
+  font-family: "Playfair Display", serif;
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--primary-blue);
+  margin: 0.2rem 0;
+}
+
+.carte-adresse strong {
+  color: #c0392b;
+  font-weight: 700;
+}
+
+.carte-cta {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.btn-contact {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 1.2rem 1.8rem;
+  background-color: var(--primary-blue);
+  color: var(--white);
+  font-family: "Montserrat", sans-serif;
+  font-weight: 700;
+  font-size: 0.95rem;
+  text-decoration: none;
+  line-height: 1.5;
+  transition:
+    background-color 0.3s,
+    transform 0.2s;
+  white-space: nowrap;
+}
+
+.btn-contact:hover {
+  background-color: #003070;
+  transform: translateY(-2px);
+}
+
+/* Map */
+#map {
+  width: 100%;
+  height: 320px;
+  box-shadow: 0 4px 16px rgba(0, 29, 61, 0.12);
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .qui-sommes-nous {
+    padding: 90px 1rem 2rem;
   }
-  .card-don {
+
+  .carte-contact {
     flex-direction: column;
-    text-align: center;
-    padding: 2rem;
   }
-  .card-don .content {
-    align-items: center;
-    text-align: center;
+
+  .btn-contact {
+    width: 100%;
+    padding: 1rem;
   }
 }

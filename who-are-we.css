@@ -20,7 +20,6 @@ body {
   line-height: 1.6;
   min-height: 100vh;
   position: relative;
-  margin-top: 5rem;
 }
 
 header {
@@ -36,7 +35,7 @@ header {
   align-items: center;
   gap: 0.75rem;
   padding: 1rem 3rem;
-  background-color: rgba(255, 235, 169, 0.6);
+  background: rgba(255, 255, 255, 0.5);
   backdrop-filter: blur(8px);
 }
 
@@ -62,12 +61,13 @@ header {
 }
 
 .contact-icon {
-  color: var(--white);
+  color: var(--primary-blue);
   font-size: 1.2rem;
   cursor: pointer;
   display: inline-flex;
   align-items: center;
   gap: 0.6rem;
+  font-weight: 600;
 }
 
 .nav-links {
@@ -76,7 +76,7 @@ header {
   right: -100%;
   width: 70%;
   height: 100vh;
-  background-color: var(--primary-blue);
+  background-color: var(--white);
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -111,6 +111,10 @@ header {
 
 #menu-toggle:checked ~ .burger-menu .bar:nth-child(3) {
   transform: rotate(45deg) translate(-5px, -6px);
+}
+
+#menu-toggle:checked ~ .burger-menu .bar {
+  background-color: var(--black);
 }
 
 main {
@@ -196,14 +200,40 @@ form textarea {
 
 footer {
   background-color: var(--primary-blue);
-  padding: 1rem;
+  color: var(--white);
+  padding: 2rem 1rem;
+  margin-top: 2rem;
   text-align: center;
 }
 
-.footer-social a {
+footer div {
+  margin-bottom: 1rem;
+}
+
+footer div:last-child {
+  margin-bottom: 0;
+}
+
+footer div:first-child {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+footer a {
   color: var(--white);
-  margin: 0 0.5rem;
   text-decoration: none;
+  font-weight: 600;
+}
+
+footer a:hover {
+  color: #ffeba9;
+}
+
+footer div:last-child a {
+  font-weight: 400;
   font-size: 0.9rem;
 }
 

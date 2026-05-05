@@ -1,8 +1,8 @@
 :root {
   --primary-orange: #ffeba9;
   --secondary-yellow: #ffc300;
-  --primary-blue: #fff;
-  --white: black;
+  --primary-blue: #001d3d;
+  --white: #ffffff;
 }
 
 * {
@@ -13,10 +13,81 @@
 
 body {
   font-family: "Montserrat", sans-serif;
+  background-color: white;
   color: var(--white);
   line-height: 1.6;
   min-height: 100vh;
   position: relative;
+}
+
+.container-nav {
+  background-color: rgba(0, 29, 61, 0.8);
+}
+
+.nav-links {
+  background-color: white;
+}
+
+.nav-links a {
+  color: black;
+}
+
+.contact-icon {
+  color: var(--white);
+}
+
+.bar {
+  color: black;
+}
+
+footer {
+  background-color: var(--primary-blue);
+  color: var(--white);
+  padding: 2rem 1rem;
+  margin-top: 2rem;
+  text-align: center;
+}
+
+footer div {
+  margin-bottom: 1rem;
+}
+
+footer div:last-child {
+  margin-bottom: 0;
+}
+
+footer div:first-child {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+footer a {
+  color: var(--white);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+footer a:hover {
+  color: #ffeba9;
+}
+
+footer div:last-child a {
+  font-weight: 400;
+  font-size: 0.9rem;
+}
+
+@media (max-width: 767px) {
+  footer {
+    padding: 1.5rem 1rem;
+  }
+
+  footer div:first-child {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
 }
 
 /* .bg {
@@ -46,11 +117,11 @@ body {
 }
 
 main {
-  padding-top: 120px;
+  padding-top: 250px;
   min-height: calc(100vh - 160px);
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;
 }
 
 .form-part {
@@ -61,6 +132,7 @@ main {
   max-width: 420px;
   width: min(90%, 420px);
   margin: 2rem auto;
+  margin-top: 8rem;
 }
 
 .form-part h2 {
@@ -124,19 +196,6 @@ form textarea {
   transition:
     background-color 0.3s,
     transform 0.2s;
-}
-
-footer {
-  background-color: var(--primary-blue);
-  padding: 1rem;
-  text-align: center;
-}
-
-.footer-social a {
-  color: var(--white);
-  margin: 0 0.5rem;
-  text-decoration: none;
-  font-size: 0.9rem;
 }
 
 @media (min-width: 768px) {

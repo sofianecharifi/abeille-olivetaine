@@ -22,7 +22,6 @@ body {
   position: relative;
 }
 
-
 header {
   position: fixed;
   top: 0;
@@ -115,7 +114,7 @@ header {
 }
 
 #menu-toggle:checked ~ .burger-menu .bar {
-  background-color: var(--white);
+  background-color: var(--black);
 }
 
 main {
@@ -199,19 +198,6 @@ form textarea {
     transform 0.2s;
 }
 
-footer {
-  background-color: var(--primary-blue);
-  padding: 1rem;
-  text-align: center;
-}
-
-.footer-social a {
-  color: var(--white);
-  margin: 0 0.5rem;
-  text-decoration: none;
-  font-size: 0.9rem;
-}
-
 @media (min-width: 768px) {
   .container-nav {
     padding: 1rem 2rem;
@@ -272,9 +258,7 @@ footer {
   }
 }
 
-
 /*<--------BIENVENUE-------->*/
-
 
 .bienvenue {
   position: relative;
@@ -309,8 +293,6 @@ main {
   display: block !important;
 }
 
-
-
 .tableau-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -337,11 +319,27 @@ main {
   background-color: #f8f9fa !important;
 }
 
-.color-blanc { background-color: #ffffff !important; color: #000; border: 1px solid #ccc; }
-.color-jaune { background-color: #fce83a !important; color: #000; }
-.color-rouge { background-color: #e63946 !important; color: #fff; }
-.color-vert { background-color: #2a9d8f !important; color: #fff; }
-.color-bleu { background-color: #0077b6 !important; color: #fff; }
+.color-blanc {
+  background-color: #ffffff !important;
+  color: #000;
+  border: 1px solid #ccc;
+}
+.color-jaune {
+  background-color: #fce83a !important;
+  color: #000;
+}
+.color-rouge {
+  background-color: #e63946 !important;
+  color: #fff;
+}
+.color-vert {
+  background-color: #2a9d8f !important;
+  color: #fff;
+}
+.color-bleu {
+  background-color: #0077b6 !important;
+  color: #fff;
+}
 
 /*<--------REINES-------->*/
 .reines-section {
@@ -374,7 +372,7 @@ main {
   height: auto;
   object-fit: cover;
   border-radius: 15px;
-  box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
 }
 
 @media (max-width: 768px) {
@@ -457,7 +455,7 @@ main {
     flex-direction: column;
     margin: 2rem;
   }
-  
+
   .association-content {
     padding: 2rem;
   }

@@ -36,9 +36,9 @@ header {
   justify-content: space-between;
   align-items: center;
   gap: 0.75rem;
-  padding: 1rem;
-  background-color: rgba(255, 255, 255, 0.95);
-  backdrop-filter: blur(10px);
+  padding: 1rem 3rem;
+  background-color: rgba(255, 235, 169, 0.6);
+  backdrop-filter: blur(8px);
 }
 
 .logo img {
@@ -57,9 +57,18 @@ header {
 .bar {
   width: 25px;
   height: 3px;
-  background-color: #001d3d;
+  background-color: var(--black);
   margin: 3px 0;
   transition: 0.3s;
+}
+
+.contact-icon {
+  color: var(--white);
+  font-size: 1.2rem;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
 }
 
 .nav-links {
@@ -68,7 +77,7 @@ header {
   right: -100%;
   width: 70%;
   height: 100vh;
-  background-color: rgba(255, 255, 255, 0.97);
+  background-color: var(--primary-blue);
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -81,9 +90,10 @@ header {
 }
 
 .nav-links a {
-  color: #001d3d;
+  color: var(--black);
   text-decoration: none;
-  font-size: 1.2rem;
+  font-size: 1.1rem;
+  font-weight: 500;
   margin: 1rem 0;
   transition: color 0.3s;
 }
@@ -104,12 +114,103 @@ header {
   transform: rotate(45deg) translate(-5px, -6px);
 }
 
+main {
+  padding-top: 120px;
+  min-height: calc(100vh - 160px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.form-part {
+  background-color: rgba(255, 255, 255, 0.9);
+  border-radius: 15px;
+  padding: 2rem;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  max-width: 420px;
+  width: min(90%, 420px);
+  margin: 2rem auto;
+}
+
+.form-part h2 {
+  color: var(--primary-blue);
+  text-align: center;
+  margin-bottom: 2rem;
+  font-family: "Playfair Display", serif;
+  font-size: 1.5rem;
+}
+
+form ul {
+  list-style: none;
+}
+
+form li {
+  margin-bottom: 1.5rem;
+}
+
+form label {
+  display: block;
+  margin-bottom: 0.5rem;
+  color: var(--primary-blue);
+  font-weight: 700;
+}
+
+form input,
+form textarea {
+  width: 100%;
+  padding: 0.75rem;
+  border: 2px solid #ddd;
+  border-radius: 8px;
+  font-size: 1rem;
+  transition:
+    border-color 0.3s,
+    box-shadow 0.3s;
+  background-color: var(--white);
+}
+
+form input:focus,
+form textarea:focus {
+  outline: none;
+  border-color: var(--secondary-yellow);
+  box-shadow: 0 0 0 3px rgba(255, 195, 0, 0.1);
+}
+
+form textarea {
+  resize: vertical;
+  min-height: 100px;
+}
+
+.submit-btn {
+  width: 100%;
+  padding: 0.75rem;
+  background-color: var(--primary-orange);
+  color: var(--primary-blue);
+  border: none;
+  border-radius: 8px;
+  font-size: 1.1rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition:
+    background-color 0.3s,
+    transform 0.2s;
+}
+
+footer {
+  background-color: var(--primary-blue);
+  padding: 1rem;
+  text-align: center;
+}
+
+.footer-social a {
+  color: var(--white);
+  margin: 0 0.5rem;
+  text-decoration: none;
+  font-size: 0.9rem;
+}
+
 @media (min-width: 768px) {
   .container-nav {
     padding: 1rem 2rem;
-    position: sticky;
-    top: 0;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
   }
 
   .nav-links {
@@ -121,22 +222,33 @@ header {
     justify-content: flex-end;
     align-items: center;
     order: 1;
-    padding-top: 0;
+    padding-top: 0.5rem;
   }
 
   .contact-icon {
     order: 2;
     margin-left: 1.5rem;
-    color: #001d3d;
   }
 
   .nav-links a {
     margin: 0 1rem;
-    color: #001d3d;
   }
 
   .burger-menu {
     display: none;
+  }
+
+  main {
+    align-items: flex-start;
+  }
+
+  .form-part {
+    max-width: 500px;
+    padding: 3rem;
+  }
+
+  .form-part h2 {
+    font-size: 2rem;
   }
 }
 

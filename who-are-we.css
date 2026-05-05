@@ -37,6 +37,7 @@ header {
   padding: 1rem 3rem;
   background: rgba(255, 255, 255, 0.5);
   backdrop-filter: blur(8px);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
 }
 
 .logo img {
@@ -95,6 +96,7 @@ header {
   font-weight: 500;
   margin: 1rem 0;
   transition: color 0.3s;
+  font-weight: 600;
 }
 
 #menu-toggle:checked ~ .nav-links {
@@ -261,6 +263,7 @@ footer div:last-child a {
 
   .nav-links a {
     margin: 0 1rem;
+    font-weight: 600;
   }
 
   .burger-menu {
@@ -288,6 +291,7 @@ footer div:last-child a {
 
   .nav-links a {
     margin: 0 1.5rem;
+    font-weight: 600;
   }
 
   .form-part {
@@ -448,6 +452,7 @@ main {
   border-left: 5px solid var(--secondary-yellow);
   padding: 1.8rem 2rem;
   box-shadow: 0 4px 16px rgba(0, 29, 61, 0.08);
+  margin-top: 8rem;
 }
 
 .qui-sommes-nous section p {

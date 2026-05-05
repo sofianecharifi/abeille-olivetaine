@@ -1,0 +1,26 @@
+* {
+
+}
+
+.tableau-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  max-width: 500px;
+  margin: 20px auto;
+  border: 2px solid black;
+  background-color: black;
+  gap: 2px;
+}
+.tableau-grid div {
+  background-color: white;
+  padding: 15px;
+  text-align: center;
+  font-family: sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.header {
+  font-weight: bold;
+}

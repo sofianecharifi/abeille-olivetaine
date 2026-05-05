@@ -1,8 +1,8 @@
 :root {
   --primary-orange: #ffeba9;
   --secondary-yellow: #ffc300;
-  --primary-blue: #001d3d;
-  --white: #ffffff;
+  --primary-blue: #fff;
+  --white: black;
 }
 
 * {

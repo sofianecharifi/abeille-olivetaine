@@ -37,7 +37,7 @@ header {
   align-items: center;
   gap: 0.75rem;
   padding: 1rem 3rem;
-  background-color: rgba(255, 235, 169, 0.6);
+  background: rgba(255, 255, 255, 0.5);
   backdrop-filter: blur(8px);
 }
 
@@ -90,7 +90,7 @@ header {
 }
 
 .nav-links a {
-  color: var(--black);
+  color: var(--white);
   text-decoration: none;
   font-size: 1.1rem;
   font-weight: 500;
@@ -112,6 +112,10 @@ header {
 
 #menu-toggle:checked ~ .burger-menu .bar:nth-child(3) {
   transform: rotate(45deg) translate(-5px, -6px);
+}
+
+#menu-toggle:checked ~ .burger-menu .bar {
+  background-color: var(--white);
 }
 
 main {
@@ -232,6 +236,7 @@ footer {
 
   .nav-links a {
     margin: 0 1rem;
+    color: var(--black);
   }
 
   .burger-menu {
@@ -303,5 +308,9 @@ footer {
   .footer-links a {
     display: block;
     margin: 0.5rem 0;
+  }
+  .card-don .content {
+    align-items: center;
+    text-align: center;
   }
 }

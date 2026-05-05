@@ -13,25 +13,11 @@
 
 body {
   font-family: "Montserrat", sans-serif;
-  background-color: var(--primary-blue);
   color: var(--white);
   line-height: 1.6;
   min-height: 100vh;
   position: relative;
 }
-
-/* .bg {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-image: url("IMG/background.jpg"); 
-  background-size: cover;
-  background-position: center;
-  z-index: -1;
-}
- */
 
 header {
   position: fixed;
@@ -123,7 +109,7 @@ header {
 }
 
 /* main */
- 
+
 main {
   padding-top: 100px;
   min-height: calc(100vh - 160px);
@@ -162,7 +148,9 @@ main {
   height: 100%;
   object-fit: cover;
   display: block;
-  transition: transform 0.4s ease, opacity 0.3s ease;
+  transition:
+    transform 0.4s ease,
+    opacity 0.3s ease;
 }
 
 .card-label {
@@ -182,26 +170,54 @@ main {
   color: rgba(255, 255, 255, 0.5);
 }
 
-/* footer */
-
 footer {
   background-color: var(--primary-blue);
-  padding: 1rem;
+  color: var(--white);
+  padding: 2rem 1rem;
+  margin-top: 2rem;
   text-align: center;
 }
 
-.footer-social a {
+footer div {
+  margin-bottom: 1rem;
+}
+
+footer div:last-child {
+  margin-bottom: 0;
+}
+
+footer div:first-child {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+footer a {
   color: var(--white);
-  margin: 0 0.5rem;
   text-decoration: none;
+  font-weight: 600;
+}
+
+footer a:hover {
+  color: #ffeba9;
+}
+
+footer div:last-child a {
+  font-weight: 400;
   font-size: 0.9rem;
 }
 
-/* responsive */
-
 @media (min-width: 768px) {
   .container-nav {
-    padding: 1rem 2rem;
+    background: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(5px);
+    padding: 15px 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
   }
 
   .nav-links {
@@ -223,6 +239,7 @@ footer {
 
   .nav-links a {
     margin: 0 1rem;
+    color: black;
   }
 
   .burger-menu {
@@ -232,16 +249,23 @@ footer {
   main {
     align-items: flex-start;
   }
-
 }
 
 @media (min-width: 1024px) {
   .container-nav {
-    padding: 1rem 3rem;
+    background: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(5px);
+    padding: 15px 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    justify-content: space-between;
+    padding-left: 20px;
+    padding-right: 20px;
   }
 
   .nav-links a {
     margin: 0 1.5rem;
   }
-
 }

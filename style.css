@@ -76,7 +76,7 @@ header {
   right: -100%;
   width: 70%;
   height: 100vh;
-  background-color: var(--primary-blue);
+  background-color: var(--white);
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -89,7 +89,7 @@ header {
 }
 
 .nav-links a {
-  color: var(--white);
+  color: var(--black);
   text-decoration: none;
   font-size: 1.1rem;
   font-weight: 500;
@@ -196,6 +196,45 @@ form textarea {
   transition:
     background-color 0.3s,
     transform 0.2s;
+}
+
+footer {
+  background-color: var(--primary-blue);
+  color: var(--white);
+  padding: 2rem 1rem;
+  margin-top: 2rem;
+  text-align: center;
+}
+
+footer div {
+  margin-bottom: 1rem;
+}
+
+footer div:last-child {
+  margin-bottom: 0;
+}
+
+footer div:first-child {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+footer a {
+  color: var(--white);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+footer a:hover {
+  color: #ffeba9;
+}
+
+footer div:last-child a {
+  font-weight: 400;
+  font-size: 0.9rem;
 }
 
 @media (min-width: 768px) {

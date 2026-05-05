@@ -150,3 +150,64 @@ header {
     margin: 0 1.5rem;
   }
 }
+
+.site-footer {
+  background-color: rgba(255, 255, 255, 0.95);
+  color: #001d3d;
+  padding: 2rem 1rem 1rem;
+  margin-top: 2rem;
+}
+
+.footer-top {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.footer-brand img {
+  height: 40px;
+  width: auto;
+}
+
+.footer-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+}
+
+.footer-links a {
+  color: #001d3d;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.footer-links a:hover {
+  text-decoration: underline;
+}
+
+.footer-info {
+  color: #001d3d;
+}
+
+.footer-bottom {
+  text-align: center;
+  margin-top: 1.5rem;
+  font-size: 0.95rem;
+  color: #55607a;
+}
+
+@media (max-width: 767px) {
+  .footer-top {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .footer-links {
+    justify-content: flex-start;
+  }
+}

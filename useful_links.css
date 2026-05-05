@@ -164,12 +164,13 @@ main {
 .card-label .title {
   font-size: 0.95rem;
   font-weight: 700;
-  color: var(--white);
+  color: var(--black);
 }
 
 .card-label .subtitle {
   font-size: 0.8rem;
   color: rgba(255, 255, 255, 0.5);
+  color: var(--black);
 }
 
 footer {

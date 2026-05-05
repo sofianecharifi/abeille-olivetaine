@@ -1,8 +1,8 @@
 :root {
   --primary-orange: #ffeba9;
   --secondary-yellow: #ffc300;
-  --primary-blue: #fff;
-  --white: black;
+  --primary-blue: #001d3d;
+  --white: #ffffff;
 }
 
 * {
@@ -13,10 +13,27 @@
 
 body {
   font-family: "Montserrat", sans-serif;
+  background-color: white;
   color: var(--white);
   line-height: 1.6;
   min-height: 100vh;
   position: relative;
+}
+
+.container-nav {
+  background-color: rgba(0, 29, 61, 0.8);
+}
+
+.nav-links a {
+  color: black;
+}
+
+.contact-icon {
+  color: var(--white);
+}
+
+.bar {
+  background-color: var(--white);
 }
 
 /* .bg {
